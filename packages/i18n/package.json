@@ -1,0 +1,25 @@
+{
+  "name": "@blufountain/i18n",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./react": "./src/react.tsx"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "oxlint": "^1.88.0",
+    "react": "^19.3.1",
+    "typescript": "~7.0.2",
+    "vitest": "^4.1.12"
+  }
+}

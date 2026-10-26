@@ -1,0 +1,29 @@
+.callout {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  font-size: 0.9rem;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.warning {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.danger {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+}
+.success {
+  border-color: var(--brand);
+  background: var(--brand-soft);
+}
+.info {
+  border-color: var(--info);
+  background: var(--info-soft);
+}

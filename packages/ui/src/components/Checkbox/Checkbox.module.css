@@ -1,0 +1,43 @@
+.checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.box {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 5px;
+  background: var(--surface);
+  color: var(--on-brand);
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.checkbox[data-selected] .box,
+.checkbox[data-indeterminate] .box {
+  background: var(--brand);
+  border-color: var(--brand);
+}
+
+.checkbox[data-focus-visible] .box {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.checkbox[data-invalid] .box {
+  border-color: var(--danger);
+}
+
+.checkbox[data-disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

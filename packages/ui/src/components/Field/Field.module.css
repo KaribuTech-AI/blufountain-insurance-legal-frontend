@@ -1,0 +1,55 @@
+/* Shared by TextField and Select: label above, hint and error below (prototype `label.f`). */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.description {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.control {
+  width: 100%;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 9px 11px;
+  min-height: 40px;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+
+.control[data-focused],
+.control[data-focus-visible] {
+  outline: none;
+  border-color: var(--brand-2);
+  box-shadow: 0 0 0 3px var(--brand-soft);
+}
+
+.control[data-invalid] {
+  border-color: var(--danger);
+}
+
+.control[data-disabled] {
+  background: var(--surface-2);
+  color: var(--muted);
+}
+
+textarea.control {
+  min-height: 90px;
+  resize: vertical;
+}

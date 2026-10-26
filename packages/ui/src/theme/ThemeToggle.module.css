@@ -1,0 +1,65 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition:
+    background 0.12s,
+    border-color 0.12s;
+}
+/* Matches the prototype's header pills (`.net`, the Alerts summary). */
+.toggle:hover {
+  border-color: var(--brand-2);
+  color: var(--brand);
+}
+
+.toggle > span {
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 550;
+}
+
+.labelled {
+  padding: 0 12px;
+}
+
+.toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Offer the opposite of what is on screen. */
+.toDark {
+  display: inline-flex;
+}
+.toLight {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme='light'])) .toDark {
+    display: none;
+  }
+  :global(:root:not([data-theme='light'])) .toLight {
+    display: inline-flex;
+  }
+}
+:global(:root[data-theme='dark']) .toDark {
+  display: none;
+}
+:global(:root[data-theme='dark']) .toLight {
+  display: inline-flex;
+}

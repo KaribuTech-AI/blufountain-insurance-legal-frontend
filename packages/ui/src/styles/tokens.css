@@ -1,0 +1,161 @@
+/*
+ * Design tokens from blufountain_insurance.html (D-29: keep the prototype's look). The
+ * prototype layers three token blocks (base, "Blufountain redesign", left panel v2); these
+ * are the merged, effective values, plus a few the prototype hard-codes inline (the rail,
+ * the menu badge, overlay shadows) so components can share them.
+ *
+ * Theme: the page follows the OS unless <html data-theme="light|dark"> pins it. The pin is
+ * written before first paint by the inline script in each index.html and changed by
+ * ThemeToggle (@blufountain/ui/theme). Without JavaScript the OS preference still applies.
+ */
+:root {
+  /* The canvas is tinted so white cards lift off it; surface-2 is for table heads and wells. */
+  --bg: #eceff4;
+  --surface: #ffffff;
+  --surface-2: #f4f6fa;
+  --surface-3: #e9eef5;
+  --ink: #0f1e33;
+  --ink-2: #30425c;
+  --muted: #5b6b82;
+  --line: #e2e8f0;
+  /* Not in the prototype: control borders need 3:1 contrast (WCAG 1.4.11); --line is ~1.2:1. */
+  --line-strong: #8a99ad;
+
+  --brand: #0b5cad;
+  --brand-2: #1b8fd8;
+  --brand-3: #8cc4ee;
+  --brand-soft: #e6f2fc;
+  --on-brand: #ffffff;
+
+  --accent: #a87612;
+  --accent-soft: #f4e6c6;
+  --danger: #a3372b;
+  --danger-soft: #f5ddd9;
+  --info: #2b5884;
+  --info-soft: #dbe6f1;
+  --teal: #0b7a6b;
+  --teal-soft: #dff4f0;
+  --violet: #4b3ba6;
+  --violet-soft: #ece8fb;
+  --focus: #2b5884;
+
+  /* Left panel v2: the icon rail and the page pane beside it. */
+  --rail: #0a2a4f;
+  --rail-ink: #9db4d3;
+  --rail-sel: rgba(59, 180, 242, 0.18);
+  --rail-mark: #3bb4f2;
+  --pane: #f7f9fc;
+  --count: #fdecc8;
+  --count-ink: #7a4e00;
+  --dot: #f2b84b;
+  --dot-ink: #2a1d00;
+
+  --radius: 14px;
+  --radius-md: 10px;
+  --radius-sm: 9px;
+  --radius-xs: 7px;
+  --shadow: 0 1px 2px rgba(15, 30, 51, 0.06), 0 2px 6px rgba(15, 30, 51, 0.05);
+  --shadow-card: 0 1px 2px rgba(15, 30, 51, 0.06), 0 4px 14px rgba(15, 30, 51, 0.06);
+  --accent-solid: #96660a;
+  --on-accent: #ffffff;
+  --faint: #7a889c;
+  --shadow-raise: 0 0 0 1px var(--line), 0 2px 6px rgba(15, 30, 51, 0.06);
+  --shadow-lg: 0 12px 32px rgba(10, 25, 60, 0.18);
+
+  --top-h: 60px;
+  --rail-w: 68px;
+  --side-w: 292px;
+  --gap: 16px;
+
+  --font:
+    'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto,
+    sans-serif;
+
+  color-scheme: light dark;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0a1424;
+    --surface: #101e33;
+    --surface-2: #152742;
+    --surface-3: #1c3150;
+    --ink: #e4ecf7;
+    --ink-2: #c3d0e2;
+    --muted: #97a9c2;
+    --line: #22385a;
+    --line-strong: #5f7699;
+    --brand: #5fb2f0;
+    --brand-2: #3e9be0;
+    --brand-3: #245a8c;
+    --brand-soft: #16365c;
+    --on-brand: #06111f;
+    --accent: #e2b04b;
+    --accent-solid: #e2b04b;
+    --on-accent: #1a1305;
+    --faint: #6f819c;
+    --accent-soft: #3a2f17;
+    --danger: #e58476;
+    --danger-soft: #3d221f;
+    --info: #86b2de;
+    --info-soft: #1c2b3b;
+    --teal: #5cd0bc;
+    --teal-soft: #123a36;
+    --violet: #b5a8f0;
+    --violet-soft: #2a2450;
+    --focus: #86b2de;
+    --rail: #06111f;
+    --pane: #0d1a2c;
+    --count: #3a2f17;
+    --count-ink: #f2c36b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35), 0 4px 14px rgba(0, 0, 0, 0.25);
+    --shadow-raise: 0 0 0 1px var(--line), 0 2px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #0a1424;
+  --surface: #101e33;
+  --surface-2: #152742;
+  --surface-3: #1c3150;
+  --ink: #e4ecf7;
+  --ink-2: #c3d0e2;
+  --muted: #97a9c2;
+  --line: #22385a;
+  --line-strong: #5f7699;
+  --brand: #5fb2f0;
+  --brand-2: #3e9be0;
+  --brand-3: #245a8c;
+  --brand-soft: #16365c;
+  --on-brand: #06111f;
+  --accent: #e2b04b;
+  --accent-solid: #e2b04b;
+  --on-accent: #1a1305;
+  --faint: #6f819c;
+  --accent-soft: #3a2f17;
+  --danger: #e58476;
+  --danger-soft: #3d221f;
+  --info: #86b2de;
+  --info-soft: #1c2b3b;
+  --teal: #5cd0bc;
+  --teal-soft: #123a36;
+  --violet: #b5a8f0;
+  --violet-soft: #2a2450;
+  --focus: #86b2de;
+  --rail: #06111f;
+  --pane: #0d1a2c;
+  --count: #3a2f17;
+  --count-ink: #f2c36b;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.35), 0 4px 14px rgba(0, 0, 0, 0.25);
+  --shadow-raise: 0 0 0 1px var(--line), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}

@@ -1,0 +1,46 @@
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.value[data-placeholder] {
+  color: var(--muted);
+}
+
+.chevron {
+  color: var(--muted);
+}
+
+.popover {
+  min-width: var(--trigger-width);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  overflow: auto;
+}
+
+.listbox {
+  padding: 4px;
+  outline: none;
+}
+
+.option {
+  padding: 7px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+}
+
+.option[data-focused] {
+  background: var(--brand-soft);
+}
+
+.option[data-selected] {
+  font-weight: 700;
+  color: var(--brand);
+}

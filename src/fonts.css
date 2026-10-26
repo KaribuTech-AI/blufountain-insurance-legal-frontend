@@ -1,0 +1,12 @@
+/*
+ * The portal's type: IBM Plex Sans, a corporate typeface built for clarity at every size. One
+ * family throughout; headlines get their authority from weight and tight spacing, body text from
+ * an open, steady rhythm. The variable font keeps it to a single download per script.
+ */
+@import '@fontsource-variable/ibm-plex-sans/wght.css';
+
+:root {
+  --font: 'IBM Plex Sans Variable', 'Segoe UI', system-ui, sans-serif;
+  --display: var(--font);
+  --serif: var(--font);
+}
